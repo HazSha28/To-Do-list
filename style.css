@@ -20,7 +20,6 @@ body {
     max-width: 400px;
     text-align: center;
     margin-left:33%;
-    margin-right:33%;
     margin-top:10%;
     animation: fadeIn 0.5s ease-in-out;
 }
@@ -384,7 +383,7 @@ h1 {
 }
 /* From Uiverse.io by marcelodolza */ 
 .container {
-    width: 3000vw; /* Viewport width */
+    width: 2000vw; /* Viewport width */
     height: 100vh; /* Viewport height */
     --s: 100px; /* Control the size */
     --c1: #9CAFAA;
@@ -482,8 +481,8 @@ body {
   /* Large Screens (Laptops) */
   @media (min-width: 1025px) and (max-width: 1440px) {
     .todo-container {
-      margin-left: 25%;
-      margin-top: 10%;
+      margin-left: 20%;
+      margin-top: 5%;
       width: 60%;
     }
   
@@ -509,7 +508,7 @@ body {
   /* Extra Large Screens (Desktops) */
   @media (min-width: 1441px) {
     .todo-container {
-      margin-left: 20%;
+      margin-left: 25%;
       margin-top: 5%;
       width: 50%;
     }
