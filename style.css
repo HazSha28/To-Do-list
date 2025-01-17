@@ -383,7 +383,7 @@ h1 {
 }
 /* From Uiverse.io by marcelodolza */ 
 .container {
-    width: 2000vw; /* Viewport width */
+    width: 3000vw; /* Viewport width */
     height: 100vh; /* Viewport height */
     --s: 100px; /* Control the size */
     --c1: #9CAFAA;
