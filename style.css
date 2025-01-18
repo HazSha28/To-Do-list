@@ -1,413 +1,239 @@
 body {
-    font-family: Arial, sans-serif;
-    /* background-color: #c3c7cf; */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    
+  font-family: Arial, sans-serif;
+  /* background-color: #c3c7cf; */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
 }
 
-.todo-container {
-    background-color: #D1BB9E;
-    padding: 20px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    margin-left:33%;
-    margin-top:10%;
-    animation: fadeIn 0.5s ease-in-out;
+.todo-app {
+  width: 400px;
+  background:#f9f4e0;
+  padding: 20px;
+  margin-bottom: 200px;
+  margin-left:500px;
+  margin-top: 200px;
+  margin-right: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 h1 {
-    margin: 0;
-    align-items: center;
-    color: #3C3D37;
+  margin: 0;
+  align-items: center;
+
+  color: #3C3D37;
+  text-align: center;
+  justify-content: space-around;
 }
 
-#input-container {
-    display: flex;
-    margin-top: 15px;
+
+.todo-input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-#todo-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #654d3b;
-    border-radius: 5px;
-    border-style: hidden;
-    transition: box-shadow 0.3s ease;
+#todo-text {
+  width: 75%;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  border-style:dashed;
+  border-color: #93b0a8;
+  
 }
 
-#todo-input:focus {
-    box-shadow: 0 0 5px #5a4433;
-    outline: none;
+#add-todo {
+  padding: 10px;
+  font-size: 16px;
+  color: #FBF3D5;;
+  background-color:  #93b0a8;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-#add-button {
-    background-color: #4A4947;
-    color: rgba(255, 255, 255, 0.957);
-    border: none;
-    padding: 10px 15px;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#add-button:hover {
-    background-color: rgba(102, 100, 99, 0.874);
-    transform: scale(1.1);
+#add-todo:hover {
+  background-color: #9CAFAA;
+  box-shadow: #cfcfcd;
+  border-style:1px  solid  #9CAFAA;
+  
 }
 
 #todo-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
+  list-style: none;
+  padding: 0;
 }
 
 .todo-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 2px solid #d3cece;
-    background-color: #f6f3f3;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    animation: slideIn 0.5s ease;
-    box-shadow: 0 2px 4px rgba(59, 55, 55, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
 }
 
-
-.todo-item button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Animation for slide-in effect */
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Animation for slide-out effect */
-@keyframes slideOut {
-    to {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-}
-
-
-.todo-item.removed {
-    animation: slideOut 0.5s ease forwards;
+.todo-item span {
+  flex-grow: 1;
 }
 
 .button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgb(20, 20, 20);
-    border: none;
-    font-weight: 600;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
-    cursor: pointer;
-    transition-duration: 0.3s;
-    overflow: hidden;
-    position: relative;
-    gap: 1px;
-  }
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.complete-btn {
+  background-color: #80b4a5;
+  color: #f9f4e0;
+}
+
+.complete-btn:hover {
+  background-color: #138496;
+}
+
+.delete-btn {
+  background-color: #b1656c;
+  color:#f9f4e0; 
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.container {
+  width: 2000vw; /* Viewport width */
+  height: 100vh; /* Viewport height */
+  --s: 100px; /* Control the size */
+  --c1: #9CAFAA;
+  --c2: #FBF3D5;
+
+  --_g: var(--c2) 4% 14%, var(--c1) 14% 24%, var(--c2) 22% 34%,
+    var(--c1) 34% 44%, var(--c2) 44% 56%, var(--c1) 56% 66%, var(--c2) 66% 76%,
+    var(--c1) 76% 86%, var(--c2) 86% 96%;
+  background: radial-gradient(
+      100% 100% at 100% 0,
+      var(--c1) 4%,
+      var(--_g),
+      #0008 96%,
+      #0000
+    ),
+    radial-gradient(
+        100% 100% at 0 100%,
+        #0000,
+        #0008 4%,
+        var(--_g),
+        var(--c1) 96%
+      )
+      var(--c1);
+  background-size: var(--s) var(--s);
+  margin:0px; /* Remove default margin */
   
-  .svgIcon {
-    width: 10px;
-    transition-duration: 0.3s;
-  }
-  
-  .svgIcon path {
-    fill:rgb(84, 82, 82);
-  }
-  
-  .button:hover {
-    width: 120px;
-    border-radius: 50px;
-    transition-duration: 0.3s;
-    background-color: #D1BB9E;
-    align-items: center;
-    gap: 0;
-  }
-  
-  .button:hover .bin-bottom {
-    width: 30px;
-    transition-duration: 0.3s;
-    transform: translateY(60%);
-  }
-  .bin-top {
-    transform-origin: bottom right;
-  }
-  .button:hover .bin-top {
-    width: 50px;
-    transition-duration: 0.3s;
-    transform: translateY(60%) rotate(160deg);
-  }
-  .button::before {
-    position: absolute;
-    top: -20px;
-    content: "Delete";
-    color: rgb(52, 49, 49);
-    transition-duration: 0.3s;
-    font-size: 2px;
-  }
-  
-  .button:hover::before {
-    font-size: 12px;
-    opacity: 1;
-    transform: translateY(32px);
-    transition-duration: 0.3s;
-  }
-  /* From Uiverse.io by mrhyddenn */ 
-.icon-btn {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #cdcdcd;
-    background: white;
-    border-radius: 25px;
-    overflow: hidden;
-    position: relative;
-    transition: width 0.2s ease-in-out;
-    font-weight: 500;
-    font-family: inherit;
-  }
-  
-  .add-btn:hover {
-    width: 120px;
-  }
-  
-  .add-btn::before,
-  .add-btn::after {
-    transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
-    content: "";
-    position: absolute;
-    height: 4px;
-    width: 10px;
-    top: calc(50% - 2px);
-    background: rgb(200, 195, 195);
-  }
-  
-  .add-btn::after {
-    right: 14px;
-    overflow: hidden;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-  }
-  
-  .add-btn::before {
-    left: 14px;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-  }
-  
-  .icon-btn:focus {
-    outline: none;
-  }
-  
-  .btn-txt {
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  
-  .add-btn:hover::before,
-  .add-btn:hover::after {
-    width: 4px;
-    border-radius: 2px;
-  }
-  
-  .add-btn:hover .btn-txt {
-    opacity: 1;
-  }
-  
-  .add-icon::after,
-  .add-icon::before {
-    transition: all 0.2s ease-in-out;
-    content: "";
-    position: absolute;
-    height: 20px;
-    width: 2px;
-    top: calc(50% - 10px);
-    background:  rgb(197, 195, 195);
-    overflow: hidden;
-  }
-  
-  .add-icon::before {
-    left: 22px;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-  }
-  
-  .add-icon::after {
-    right: 22px;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-  }
-  
-  .add-btn:hover .add-icon::before {
-    left: 15px;
-    height: 4px;
-    top: calc(50% - 2px);
-  }
-  
-  .add-btn:hover .add-icon::after {
-    right: 15px;
-    height: 4px;
-    top: calc(50% - 2px);
-  }
-  .loader {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 0; /* Position at the bottom of the screen */
-    left: 0;
-    width: 100%; /* Full width */
-    margin: 0;
+} 
+
+.loader {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0; /* Position at the bottom of the screen */
+  left: 0;
+  width: 100%; /* Full width */
+  margin: 0;
 }
 
 .truckWrapper {
-    width: 200px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    align-items: center;
-    justify-content: flex-end;
-    overflow-x: hidden;
-    animation: moveTruck 5s linear infinite; /* Move truck from left to right */
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
+  overflow-x: hidden;
+  animation: moveTruck 5s linear infinite; /* Move truck from left to right */
 }
 
 /* Truck upper body */
 .truckBody {
-    width: 150px;
-    height: fit-content;
-    margin-bottom: 6px;
-    animation: motion 1s linear infinite;
+  width: 150px;
+  height: fit-content;
+  margin-bottom: 6px;
+  animation: motion 1s linear infinite;
 }
 
 /* Truck suspension animation */
 @keyframes motion {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(3px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+  0% {
+      transform: translateY(0px);
+  }
+  50% {
+      transform: translateY(3px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
 }
 
 /* Truck's tires */
 .truckTires {
-    width: 130px;
-    height:fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 10px 0px 15px;
-    position: absolute;
-    bottom: 0;
-    
+  width: 130px;
+  height:fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px 0px 15px;
+  position: absolute;
+  bottom: 0;
+  
 }
 
 .truckTires svg {
-    width: 28px;
+  width: 28px;
 }
 
 
 .lampPost {
-    position: absolute;
-    bottom: 0;
-    right: 90%;
-    height: 90px;
-    animation: roadAnimation 1.4s linear infinite;
+  position: absolute;
+  bottom: 0;
+  right: 90%;
+  height: 90px;
+  animation: roadAnimation 1.4s linear infinite;
 }
 
 @keyframes roadAnimation {
-    0% {
-        transform: translateX(0px);
-    }
-    100% {
-        transform: translateX(-350px);
-    }
+  0% {
+      transform: translateX(0px);
+  }
+  100% {
+      transform: translateX(-350px);
+  }
 }
 
 /* Truck movement animation from left to right */
 @keyframes moveTruck {
-    0% {
-        transform: translateX(-500px); /* Start off-screen to the left */
-    }
-    100% {
-        transform: translateX(300%); /* End off-screen to the right */
-    }
+  0% {
+      transform: translateX(-500px); /* Start off-screen to the left */
+  }
+  100% {
+      transform: translateX(300%); /* End off-screen to the right */
+  }
 }
-/* From Uiverse.io by marcelodolza */ 
-.container {
-    width: 2000vw; /* Viewport width */
-    height: 100vh; /* Viewport height */
-    --s: 100px; /* Control the size */
-    --c1: #9CAFAA;
-    --c2: #FBF3D5;
-
-    --_g: var(--c2) 4% 14%, var(--c1) 14% 24%, var(--c2) 22% 34%,
-      var(--c1) 34% 44%, var(--c2) 44% 56%, var(--c1) 56% 66%, var(--c2) 66% 76%,
-      var(--c1) 76% 86%, var(--c2) 86% 96%;
-    background: radial-gradient(
-        100% 100% at 100% 0,
-        var(--c1) 4%,
-        var(--_g),
-        #0008 96%,
-        #0000
-      ),
-      radial-gradient(
-          100% 100% at 0 100%,
-          #0000,
-          #0008 4%,
-          var(--_g),
-          var(--c1) 96%
-        )
-        var(--c1);
-    background-size: var(--s) var(--s);
-    margin:0px; /* Remove default margin */
-    
-} 
